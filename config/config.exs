@@ -7,6 +7,13 @@
 # General application configuration
 use Mix.Config
 
+config :node_ssr,
+  ports: [8080],
+  wait: 500,
+  script_path: "#{File.cwd!()}/assets/ssr.js",
+  module_paths: ["./assets/node_modules", "./assets"]
+  # log_prefix: "#{File.cwd!()}/logs"
+
 config :demo,
   ecto_repos: [Demo.Repo]
 
