@@ -1,3 +1,0 @@
-Starting ssr service on port:  8080
-SSR Response(8080): {"markup":"<h1 data-reactroot=\"\"> WHOA! <!-- -->Doug</h1>","error":null,"props":{"name":"Doug"},"extra":null}
-SSR Response(8080): {"markup":"<div data-reactroot=\"\"><h3>Props:</h3><div>{&quot;name&quot;:&quot;Doug&quot;}</div><br/><form><input type=\"text\" name=\"name\" placeholder=\"new name\"/><button type=\"submit\"> Update Name </button></form><div><p>Count: <!-- -->0</p><button type=\"button\">Inc</button></div><button type=\"button\" phx-click=\"trigger-event\">Trigger Server Event</button></div>","error":null,"props":{"name":"Doug"},"extra":null}
