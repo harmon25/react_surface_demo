@@ -2,7 +2,6 @@ defmodule DemoWeb.PageLive do
   # use DemoWeb, :live_view
   use Surface.LiveView
   alias ReactSurface.React
-  alias ReactSurface.ReactSSR
   alias DemoWeb.{HelloReactSurface, Simple}
 
   data component_props, :map, default: %{name: "Doug"}
@@ -15,6 +14,7 @@ defmodule DemoWeb.PageLive do
      <Simple id="simple_ssr" props={{@component_props}} />
      <React :if={{@show_react}} component="HelloReactSurface" props={{@component_props}}/>
 
+     <HelloReactSurface id="ssr" props={{@component_props}}/>
      <button type="button" phx-click="toggle-react">Toggle React</button>
     </div>
     """

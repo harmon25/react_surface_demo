@@ -48,7 +48,7 @@ defmodule Demo.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:surface, "~> 0.1.1"},
-      {:react_surface, github: "harmon25/react_surface", branch: "ssr"}
+      {:react_surface, github: "harmon25/react_surface"}
     ]
   end
 
