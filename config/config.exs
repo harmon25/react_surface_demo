@@ -8,8 +8,8 @@
 use Mix.Config
 
 config :node_ssr,
-  ports: [8082],
-  script_path: "#{File.cwd!()}/assets/ssr.js"
+  assets_path: "#{File.cwd!()}/assets",
+  script_name: "ssr.js"
 
 config :demo,
   ecto_repos: [Demo.Repo]

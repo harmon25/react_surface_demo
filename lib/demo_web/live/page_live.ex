@@ -8,14 +8,14 @@ defmodule DemoWeb.PageLive do
   data show_react, :boolean, default: true
 
   @impl true
+  @spec render(any) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
     ~H"""
     <div>
-     <Simple id="simple_ssr" props={{@component_props}} />
-     <React :if={{@show_react}} component="HelloReactSurface" props={{@component_props}}/>
-
-     <HelloReactSurface id="ssr" props={{@component_props}}/>
-     <button type="button" phx-click="toggle-react">Toggle React</button>
+      <Simple props={{@component_props}} />
+      <React :if={{@show_react}} component="HelloReactSurface" props={{@component_props}}/>
+      <HelloReactSurface rid="ssr" props={{@component_props}}/>
+      <button type="button" phx-click="toggle-react">Toggle React</button>
     </div>
     """
   end
@@ -23,7 +23,7 @@ defmodule DemoWeb.PageLive do
   @impl true
   def handle_event("update_name", %{"new_name" => new_name}, socket) do
     # passes new component props - hydrating the component with new props - retaining internal state.
-    {:noreply, assign(socket, :component_props,  %{name: new_name})}
+    {:noreply, assign(socket, :component_props, %{name: new_name})}
   end
 
   @impl true
@@ -37,5 +37,4 @@ defmodule DemoWeb.PageLive do
     # receive data from within react component via handleEvent
     {:noreply, push_event(socket, "from_server", %{data_from_server: "WHOOA"})}
   end
-
 end
